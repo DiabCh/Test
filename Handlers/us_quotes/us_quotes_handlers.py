@@ -1,5 +1,6 @@
 import re
 
+
 def get_pages(
         document: object) -> list:
     """

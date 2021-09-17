@@ -1,5 +1,4 @@
-import fitz
-from validators import PdfValidator
+from validators.pdf_validators import PdfValidator
 search_terms = ['Date', 'Our Ref', 'TOTAL HANDOVER AMOUNT',
                 'NAME', 'PHYSICAL ADDRESS', 'REGISTERED ADDRESS',
                 'TELEPHONE NO', 'CELL NO', 'EMAIL ADDRESS',

@@ -1,6 +1,6 @@
 import fitz  # this is pymupdf
 import os
-import re
+
 from Handlers.us_quotes.us_quotes_handlers import get_pages,\
     extract_dispatch_no, slice_dispatch_no
 
@@ -28,5 +28,10 @@ for filename in os.listdir('US_Quotes'):
             print('Could not find dispatch number')
 
         # get db queries
+        # CDS.DBR_NO(debtor number to be extracted always 7 characters) to obtain and break into groups of 2
+        # DBR_CLI_REF_NO(client reference number, dispatch number)
+        # DBR_CLI_REF_NO  = dispatch_number and DBR_CLIENT like 'DELL%'
 
         # move file to different folders
+
+        # files are located in gfs in ETL VM
