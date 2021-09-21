@@ -35,7 +35,7 @@ def slice_dispatch_no(
         'code_1': dispatch_no[0:2],
         'code_2:': dispatch_no[2:4],
         'code_3': dispatch_no[4:6],
-        'code_4': dispatch_no[6:8],
-        'code_5': dispatch_no[8]
+        'code_4': dispatch_no[6]
     }
+
     return dispatch_codes
