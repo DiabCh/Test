@@ -12,10 +12,10 @@ class Document:
             filepath: str) -> None:
 
         self.filepath = filepath
-        self.document = self.quickstart()
+        self.document = self.document_request()
         self.entities = self.document.entities
 
-    def quickstart(
+    def document_request(
             self) -> documentai.Document:
         client = documentai.DocumentProcessorServiceClient()
 
@@ -43,3 +43,6 @@ class Document:
             self) -> list[str]:
         return [entity.type_ for entity in self.entities]
 
+    def __len__(
+            self) -> int:
+        return len(self.entities)
