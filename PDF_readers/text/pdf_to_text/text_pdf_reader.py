@@ -4,13 +4,12 @@ import os
 
 # import csv
 # import pandas
-from Handlers.pdf_handler import doc_handler, search_terms
-
+from PDF_readers.text.pdf_to_text.pdf_handler import doc_handler
 
 # created a pdf object
-for filename in os.listdir('invoices/HOEXTM'):
+for filename in os.listdir('../../../invoices/HOEXTM'):
     if filename.endswith('.pdf'):
-        file_address = os.path.join('invoices/HOEXTM', filename)
+        file_address = os.path.join('../../../invoices/HOEXTM', filename)
         doc = fitz.open(file_address)
 
 
@@ -25,3 +24,10 @@ for filename in os.listdir('invoices/HOEXTM'):
         # pandas
         # tessaract
 
+# import pandas as pd
+#
+# a = [['a','b','c'],[1, 7, 2]]
+#
+# myvar = pd.Series(a)
+#
+# print(myvar)

@@ -1,4 +1,4 @@
-from validators.pdf_validators import PdfValidator
+from PDF_readers.text.pdf_to_text.validators.pdf_validators import PdfValidator
 search_terms = ['Date', 'Our Ref', 'TOTAL HANDOVER AMOUNT',
                 'NAME', 'PHYSICAL ADDRESS', 'REGISTERED ADDRESS',
                 'TELEPHONE NO', 'CELL NO', 'EMAIL ADDRESS',

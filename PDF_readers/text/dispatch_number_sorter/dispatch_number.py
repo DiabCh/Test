@@ -1,17 +1,17 @@
 import fitz  # this is pymupdf
 import os
 
-from Handlers.us_quotes_handlers import get_pages,\
+from PDF_readers.text.dispatch_number_sorter.us_quotes_handlers import get_pages,\
     extract_dispatch_no, slice_dispatch_no
 
 files_passed = 0
 files_failed = []
 
 
-for filename in os.listdir('invoices/US_Quotes'):
+for filename in os.listdir('../../../invoices/US_Quotes'):
     if filename.endswith('.pdf'):  # checks if file is pdf
         print(filename)
-        file_address = os.path.join('invoices/US_Quotes', filename) # builds address
+        file_address = os.path.join('../../../invoices/US_Quotes', filename) # builds address
         doc = fitz.open(file_address)  # opens the pdf object
         document_blocks = get_pages(doc)  # loads pages and returns list object
 
