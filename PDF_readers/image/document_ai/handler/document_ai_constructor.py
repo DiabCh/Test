@@ -2,20 +2,19 @@ import os
 from google.cloud import documentai_v1 as documentai
 from keys import LOCATION, PROCESSOR_ID, PROJECT_ID
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = 'dandsltd-dev-e0c5251c5ebd.json'
-
 
 class Document:
 
     def __init__(
             self,
-            filepath: str) -> None:
-
+            filepath: str,
+            mode: str) -> None:
+        self.mode = mode
         self.filepath = filepath
-        self.document = self.document_request()
+        self.document = self.extract_data_single()
         self.entities = self.document.entities
 
-    def document_request(
+    def extract_data_single(
             self) -> documentai.Document:
         client = documentai.DocumentProcessorServiceClient()
 
@@ -35,7 +34,7 @@ class Document:
         document = result.document
         return document
 
-    def dict_from_entities(
+    def __dict__(
             self) -> dict[str:str]:
         return {key.type_: key.mention_text for key in self.entities}
 
@@ -46,3 +45,7 @@ class Document:
     def __len__(
             self) -> int:
         return len(self.entities)
+
+    def __str__(
+            self) -> str:
+        return self.filepath.split('\\')[-1]
