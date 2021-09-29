@@ -10,6 +10,9 @@ company_coordinates = {
         'name': (366, 440, 399+366, 440+39),
         'balance': (369, 571, 369+258, 571+38),
         'address': (367, 485, 729+367, 485+40)
+    },
+    "company_2":{
+        'date': (12, 34,56,78)
     }
 }
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'

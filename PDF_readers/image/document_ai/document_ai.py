@@ -1,7 +1,5 @@
-from handler.document_ai_constructor import Document
+from handler.document_ai_constructor import Document, DataFrame
 import os
-import pandas as pd
-import datetime
 from pprint import pprint
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = 'dandsltd-dev-e0c5251c5ebd.json'
 ROOT = '../../../invoices/HOEXTM'
@@ -18,7 +16,7 @@ def main() -> None:
                 mode='single'
             )
             print(document)
-            # print(document.__repr__())
+            print(document.__repr__())
             print(document.__len__())
             pprint(document.__dict__())
             doc_dict = document.__dict__()
@@ -27,9 +25,9 @@ def main() -> None:
 
 if __name__ == '__main__':
     main()
-    df = pd.DataFrame(DATA_LIST)
-    df.to_excel(f'invoice_data{datetime.date.today()}.xls', index=False)
-
+    df_object = DataFrame(DATA_LIST)
+    df_object.split_address()
+    df_object.create_xls()
     """   
     https://xlsxwriter.readthedocs.io/working_with_pandas.html
     the df can not be inherently stylized but using xlswriter, we can

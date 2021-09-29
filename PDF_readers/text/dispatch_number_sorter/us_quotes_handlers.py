@@ -1,5 +1,10 @@
 import re
 
+"""
+DEMO
+FULL VERSION IN etl/projects/dell/pdf_reader
+"""
+
 
 def get_pages(
         document: object) -> list:

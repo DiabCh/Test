@@ -21,13 +21,3 @@ for filename in os.listdir('../../../invoices/HOEXTM'):
 
         pprint(validated_pdf_data)
 
-        # pandas
-        # tessaract
-
-# import pandas as pd
-#
-# a = [['a','b','c'],[1, 7, 2]]
-#
-# myvar = pd.Series(a)
-#
-# print(myvar)
